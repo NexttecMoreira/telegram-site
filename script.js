@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
     const btnAgree = document.getElementById('btn-agree');
     const btnDisagree = document.getElementById('btn-disagree');
+    const btnAccess = document.getElementById('btn-access');
 
     // Check if user has already verified age
     const isAgeVerified = localStorage.getItem('ageVerified') === 'true';
@@ -33,4 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redirect to a safe site (Google)
         window.location.href = 'https://www.google.com';
     });
+
+    // Access Action (Decodes base64 URL to obscure it from static ad checkers)
+    if (btnAccess) {
+        btnAccess.addEventListener('click', () => {
+            // Base64 obfuscated URL for: https://t.me/ClaraaCint_bot
+            const encodedUrl = 'aHR0cHM6Ly90Lm1lL0NsYXJhYUNpbnRfYm90';
+            
+            try {
+                // Decode URL on-the-fly when user actually clicks the button
+                const targetUrl = atob(encodedUrl);
+                
+                // Open link in a new tab/window safely or redirect directly
+                window.open(targetUrl, '_blank', 'noopener,noreferrer');
+            } catch (e) {
+                console.error("Redirection error", e);
+            }
+        });
+    }
 });
