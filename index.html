@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Privado | Telegram ou Site Oficial</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Age Verification Modal -->
+    <div id="age-gate" class="age-gate">
+        <div class="age-gate-content">
+            <div class="age-gate-logo">
+                <span class="logo-accent">18</span><span>+</span>
+            </div>
+            <h2>Verificação de Idade</h2>
+            <p>Este site contém material adulto e exclusivo para maiores de idade. Você tem 18 anos ou mais?</p>
+            <div class="age-gate-buttons">
+                <button id="btn-agree" class="btn-primary-glow btn-agree">Sim, tenho 18+ anos</button>
+                <button id="btn-disagree" class="btn-outline btn-disagree">Não, sair</button>
+            </div>
+            <p class="age-gate-footer">Ao clicar em confirmar, você concorda com nossos Termos de Uso e Política de Conteúdo.</p>
+        </div>
+    </div>
+
+    <!-- Main Container (hidden until age verified) -->
+    <div id="main-content" class="main-content blurred">
+        <!-- Animated Background Elements -->
+        <div class="bg-glows">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+        </div>
+
+        <header class="site-header">
+            <div class="logo">
+                <span class="logo-vip">VIP</span><span class="logo-access">ACCESS</span>
+            </div>
+            <p class="subtitle">Escolha como deseja acessar o melhor conteúdo exclusivo</p>
+        </header>
+
+        <main class="choice-container">
+            <!-- Telegram Card -->
+            <div class="choice-card card-telegram">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="badge badge-telegram">MAIOR VOLUME</div>
+                    <div class="card-icon-container">
+                        <!-- Custom SVG Telegram Icon -->
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15.82-.71 4.13-1 5.72-.12.67-.37.89-.61.91-.52.05-.91-.34-1.42-.67-.79-.52-1.24-.84-2-1.35-.88-.58-.31-.9.19-1.42.13-.14 2.39-2.19 2.43-2.36.01-.02.01-.11-.04-.16-.05-.05-.12-.03-.18-.02-.07.02-1.29.82-3.64 2.41-.34.24-.65.35-.93.34-.31-.01-.9-.18-1.34-.32-.54-.18-.97-.27-.93-.57.02-.16.24-.32.66-.49 2.58-1.12 4.31-1.87 5.17-2.22 2.47-.99 2.98-1.16 3.31-1.17.07 0 .24.02.35.1.09.07.12.17.13.26 0 .09-.01.27-.02.37z"/>
+                        </svg>
+                    </div>
+                    <h3>Telegram VIP</h3>
+                    <p class="card-desc">Um feed dinâmico e de acesso imediato, contendo o maior volume de mídias atualizadas em tempo real.</p>
+                    <ul class="card-features">
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Maior volume de fotos e vídeos (+mídias)
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Notificações instantâneas diretamente no celular
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Conteúdo corrido em tempo real (menos estruturado)
+                        </li>
+                    </ul>
+                    <a href="https://t.me/ClaraaCint_bot" target="_blank" rel="noopener noreferrer" class="btn-card btn-telegram">
+                        Entrar no Telegram VIP
+                        <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Website Card -->
+            <div class="choice-card card-web">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="badge badge-web">EXCLUSIVIDADE & ORDEM</div>
+                    <div class="card-icon-container">
+                        <!-- Custom SVG Globe/Web Icon -->
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3>Site Premium</h3>
+                    <p class="card-desc">Um ambiente totalmente organizado e categorizado, focado exclusivamente em ensaios fotográficos de alta resolução.</p>
+                    <ul class="card-features">
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Foco exclusivo em fotos e ensaios VIP
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Navegação organizada por categorias
+                        </li>
+                        <li>
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Imagens em alta definição e exclusivas
+                        </li>
+                    </ul>
+                    <a href="https://nextvip.site/" target="_blank" rel="noopener noreferrer" class="btn-card btn-web">
+                        Acessar Site Premium
+                        <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Comparison Table Section -->
+        <section class="comparison-section">
+            <h2 class="section-title">Por que assinar o nosso VIP?</h2>
+            <p class="section-subtitle">Chega de vírus, links quebrados e anúncios chatos. Veja a diferença:</p>
+            
+            <div class="comparison-table">
+                <div class="comp-header">
+                    <div class="comp-col-label">Vantagens</div>
+                    <div class="comp-col-bad">Sites Gratuitos Ruins</div>
+                    <div class="comp-col-good">Nosso Acesso VIP</div>
+                </div>
+                
+                <div class="comp-row">
+                    <div class="comp-col-label">Qualidade dos Vídeos</div>
+                    <div class="comp-col-bad"><span class="icon-bad">❌</span> 360p (Pixelado / Travando)</div>
+                    <div class="comp-col-good"><span class="icon-good">✅</span> Full HD (1080p) e 4K</div>
+                </div>
+                
+                <div class="comp-row">
+                    <div class="comp-col-label">Segurança</div>
+                    <div class="comp-col-bad"><span class="icon-bad">❌</span> Risco de Vírus e Malwares</div>
+                    <div class="comp-col-good"><span class="icon-good">✅</span> 100% Seguro e Livre de Vírus</div>
+                </div>
+                
+                <div class="comp-row">
+                    <div class="comp-col-label">Propagandas</div>
+                    <div class="comp-col-bad"><span class="icon-bad">❌</span> Pop-ups irritantes a cada clique</div>
+                    <div class="comp-col-good"><span class="icon-good">✅</span> Zero anúncios, navegação limpa</div>
+                </div>
+
+                <div class="comp-row">
+                    <div class="comp-col-label">Novidades</div>
+                    <div class="comp-col-bad"><span class="icon-bad">❌</span> Conteúdo antigo e fora do ar</div>
+                    <div class="comp-col-good"><span class="icon-good">✅</span> Atualização diária em tempo real</div>
+                </div>
+
+                <div class="comp-row">
+                    <div class="comp-col-label">Suporte</div>
+                    <div class="comp-col-bad"><span class="icon-bad">❌</span> Sem suporte ou ajuda</div>
+                    <div class="comp-col-good"><span class="icon-good">✅</span> Canal de atendimento direto</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="disclaimer">⚠️ O conteúdo deste site é estritamente confidencial e destinado a fins de entretenimento para adultos.</p>
+            <p class="copyright">&copy; 2026 VIP Access. Todos os direitos reservados. 18+ Apenas.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
