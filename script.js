@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Access Action (Decodes base64 URL to obscure it from static ad checkers)
     if (btnAccess) {
         btnAccess.addEventListener('click', () => {
-            // Base64 obfuscated URL for: https://t.me/ClaraaCint_bot
-            const encodedUrl = 'aHR0cHM6Ly90Lm1lL0NsYXJhYUNpbnRfYm90';
+            // Base64 obfuscated URL for: https://t.me/claraahotbot
+            const encodedUrl = 'aHR0cHM6Ly90Lm1lL2NsYXJhYWhvdGJvdA==';
             
             try {
                 // Decode URL on-the-fly when user actually clicks the button
