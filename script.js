@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAgree = document.getElementById('btn-agree');
     const btnDisagree = document.getElementById('btn-disagree');
     const btnAccess = document.getElementById('btn-access');
+    const btnSiteAccess = document.getElementById('btn-site-access');
 
     // Check if user has already verified age
     const isAgeVerified = localStorage.getItem('ageVerified') === 'true';
@@ -47,6 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Open link in a new tab/window safely or redirect directly
                 window.open(targetUrl, '_blank', 'noopener,noreferrer');
+            } catch (e) {
+                console.error("Redirection error", e);
+            }
+        });
+    }
+
+    // Site Access Action (Decodes base64 URL to obscure it from static ad checkers)
+    if (btnSiteAccess) {
+        btnSiteAccess.addEventListener('click', () => {
+            // Base64 obfuscated URL for: https://nextvip.site/
+            const encodedSiteUrl = 'aHR0cHM6Ly9uZXh0dmlwLnNpdGUv';
+            
+            try {
+                // Decode URL on-the-fly when clicked
+                const targetSiteUrl = atob(encodedSiteUrl);
+                
+                // Open link in a new tab/window safely
+                window.open(targetSiteUrl, '_blank', 'noopener,noreferrer');
             } catch (e) {
                 console.error("Redirection error", e);
             }
