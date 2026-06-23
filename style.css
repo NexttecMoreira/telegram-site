@@ -278,12 +278,28 @@ button {
     color: var(--text-primary);
 }
 
-.subtitle {
+.subtitle-container {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 0.65s;
+}
+
+.subtitle-bottom {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    font-weight: 300;
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 0.92rem;
+    font-weight: 400;
+    max-width: 620px;
+    text-align: center;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Single Card Container */
