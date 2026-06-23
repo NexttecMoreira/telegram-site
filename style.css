@@ -761,6 +761,229 @@ button {
     }
 }
 
+/* Badge Container */
+.badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.badge-container .badge {
+    margin-bottom: 0;
+}
+
+.urgency-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: pulseGlow 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(239, 68, 68, 0.1);
+        border-color: rgba(239, 68, 68, 0.25);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+        border-color: rgba(239, 68, 68, 0.5);
+    }
+}
+
+/* Pricing Box */
+.pricing-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+.price-promo {
+    display: inline-block;
+    padding: 3px 8px;
+    background: rgba(168, 85, 247, 0.15);
+    color: #d8b4fe;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.price-details {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.price-old {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.price-new {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.price-new strong {
+    color: #a855f7; /* Purple color */
+    font-weight: 800;
+}
+
+.price-new small {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.price-note {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+/* Section Subtitles & Titles */
+.section-title-small {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 0.7s;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.test-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-telegram) 0%, var(--accent-purple) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.stars {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.test-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* FAQ Section */
+.faq-section {
+    width: 100%;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 0.8s;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.faq-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.faq-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+}
+
+.faq-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
 /* ==========================================
    Responsive Design
    ========================================== */
@@ -904,5 +1127,37 @@ button {
     
     .comp-row .comp-col-good {
         background: transparent !important;
+    }
+
+    .badge-container {
+        align-items: center;
+        gap: 8px;
+    }
+
+    .urgency-badge {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    .testimonials-grid, .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .section-title-small {
+        font-size: 1.15rem;
+        margin-bottom: 18px;
+    }
+
+    .testimonial-card, .faq-card {
+        padding: 20px;
+    }
+
+    .pricing-box {
+        padding: 16px 12px;
+    }
+
+    .price-new {
+        font-size: 1.2rem;
     }
 }
