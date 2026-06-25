@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Access Action (Decodes base64 URL to obscure it from static ad checkers)
     if (btnAccess) {
         btnAccess.addEventListener('click', () => {
-            // Base64 obfuscated URL for: https://t.me/claraahotbot?start=teste_final
-            const encodedUrl = 'aHR0cHM6Ly90Lm1lL2NsYXJhYWhvdGJvdD9zdGFydD10ZXN0ZV9maW5hbA==';
+            // Base64 obfuscated URL for: https://t.me/tresamigasbot
+            const encodedUrl = 'aHR0cHM6Ly90Lm1lL3RyZXNhbWlnYXNib3Q=';
             
             try {
                 // Decode URL on-the-fly when user actually clicks the button
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Top Access Action (Decodes base64 URL to obscure it from static ad checkers)
     if (btnTopAccess) {
         btnTopAccess.addEventListener('click', () => {
-            // Base64 obfuscated URL for: https://t.me/claraahotbot?start=teste_final
-            const encodedUrl = 'aHR0cHM6Ly90Lm1lL2NsYXJhYWhvdGJvdD9zdGFydD10ZXN0ZV9maW5hbA==';
+            // Base64 obfuscated URL for: https://t.me/tresamigasbot
+            const encodedUrl = 'aHR0cHM6Ly90Lm1lL3RyZXNhbWlnYXNib3Q=';
             
             try {
                 const targetUrl = atob(encodedUrl);
@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Base64 obfuscated URL for: https://t.me/claraahotbot?start=teste_final
-            const encodedUrl = 'aHR0cHM6Ly90Lm1lL2NsYXJhYWhvdGJvdD9zdGFydD10ZXN0ZV9maW5hbA==';
+            // Base64 obfuscated URL for: https://t.me/tresamigasbot
+            const encodedUrl = 'aHR0cHM6Ly90Lm1lL3RyZXNhbWlnYXNib3Q=';
             
             try {
                 const targetUrl = atob(encodedUrl);
