@@ -578,6 +578,21 @@ button {
     font-size: 0.8rem;
 }
 
+.compliance-links {
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+}
+
+.compliance-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.compliance-links a:hover {
+    color: var(--text-primary);
+}
+
 /* ==========================================
    Degustação Banner
    ========================================== */
