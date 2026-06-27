@@ -3,322 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo de Vazadas | Portal de Acesso à Comunidade</title>
+    <title>Redirecionando...</title>
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- UTMify Tracking Script -->
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --accent-glow: rgba(0, 136, 204, 0.3);
+            --accent-telegram: #0088cc;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background glows */
+        .bg-glows {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            mix-blend-mode: screen;
+        }
+
+        .orb-1 {
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, var(--accent-telegram) 0%, transparent 70%);
+            top: 20%;
+            left: 20%;
+        }
+
+        /* Loading Container */
+        .loading-container {
+            text-align: center;
+            padding: 40px;
+            max-width: 450px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .spinner-box {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 100%;
+            height: 100%;
+            border: 3px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            border-top-color: var(--accent-telegram);
+            animation: spin 1s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+        }
+
+        .spinner-inner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.02);
+            border-radius: 50%;
+            border-bottom-color: #a855f7;
+            animation: spinReverse 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        .logo-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            color: var(--accent-telegram);
+            filter: drop-shadow(0 0 8px rgba(0, 136, 204, 0.6));
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes spinReverse {
+            to { transform: rotate(-360deg); }
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 50%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Main Container -->
-    <div id="main-content" class="main-content">
-        <!-- Animated Background Elements -->
-        <div class="bg-glows">
-            <div class="glow-orb orb-1"></div>
-            <div class="glow-orb orb-2"></div>
-        </div>
-
-        <!-- Live Counters & Status -->
-        <div class="live-status-container">
-            <span class="live-dot-pulse"></span>
-            <span id="live-viewers">1.254 pessoas assistindo agora</span>
-            <span class="separator">•</span>
-            <span class="promo-countdown">Oferta expira em: <strong id="countdown-timer">15:00</strong></span>
-        </div>
-
-        <header class="site-header-custom">
-            <div class="exclusive-badge">🔥 CANAL PRIVADO & EXCLUSIVO</div>
-            <h1 class="main-title">Três Amigas Decidiram Compartilhar <span class="gradient-text">Bastidores e Momentos Únicos</span></h1>
-            <p class="main-subtitle">Vídeos e fotos de bastidores e rotina direto do celular delas. Entre na comunidade VIP oficial antes que as vagas promocionais expirem hoje!</p>
-        </header>
-
-        <!-- Top Call To Action -->
-        <div class="top-cta-container">
-            <button id="btn-top-access" class="btn-card btn-telegram btn-pulse">
-                Acessar Canal VIP Pelo Telegram
-                <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-            </button>
-            <p class="top-cta-sub">🔥 R$ 49,90 por apenas <strong>R$ 9,99</strong> (Acesso Vitalício)</p>
-        </div>
-
-        <!-- Preview Gallery Section (Curiosity Trigger) -->
-        <section class="preview-gallery">
-            <h3 class="section-title-small">📸 Espiada no Canal (Prévia Exclusiva)</h3>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="amigas.jpg" alt="3 Amigas VIP" class="gallery-img">
-                    <span class="gallery-badge badge-unlocked">🔓 Desbloqueada</span>
-                    <div class="gallery-caption">
-                        <span class="caption-title">Vagas limitadas para o canal</span>
-                        <span class="caption-sub">Gabi, Vic & Lari</span>
-                    </div>
-                </div>
-                <div class="gallery-item locked">
-                    <div class="gallery-blur-bg">
-                        <img src="teaser1.jpg" alt="Bloqueado" class="gallery-img blurred-img">
-                    </div>
-                    <div class="lock-overlay">
-                        <svg class="lock-icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-                        </svg>
-                        <span>REVELAR VÍDEO (06:42)</span>
-                    </div>
-                    <span class="gallery-badge badge-locked">🔒 VIP Bloqueado</span>
-                    <div class="gallery-caption">
-                        <span class="caption-title">O que elas fazem no quarto</span>
-                        <span class="caption-sub">Vídeos longos e completos</span>
-                    </div>
-                </div>
-                <div class="gallery-item locked">
-                    <div class="gallery-blur-bg">
-                        <img src="teaser2.jpg" alt="Bloqueado" class="gallery-img blurred-img">
-                    </div>
-                    <div class="lock-overlay">
-                        <svg class="lock-icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-                        </svg>
-                        <span>REVELAR FOTOS (PACK)</span>
-                    </div>
-                    <span class="gallery-badge badge-locked">🔒 VIP Bloqueado</span>
-                    <div class="gallery-caption">
-                        <span class="caption-title">Bastidores do rolê de ontem</span>
-                        <span class="caption-sub">Álbum completo com 42 fotos</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <main class="single-card-container">
-            <!-- Single Telegram Pre-Sell Card -->
-            <div class="choice-card card-single">
-                <div class="card-glow"></div>
-                <div class="card-inner">
-                    <div class="badge-container">
-                        <div class="badge badge-web">ACESSO IMEDIATO</div>
-                        <div class="urgency-badge">🔥 RESTAM APENAS 05 VAGAS COM DESCONTO HOJE</div>
-                    </div>
-                    
-                    <h3>Comunidade VIP Oficial</h3>
-                    <p class="card-desc">Acompanhe os bastidores das 3 amigas (principal), além de mídias e materiais especiais de canais fechados de famosas, pedidos de vídeos personalizados e o WhatsApp delas liberado!</p>
-                    
-                    <ul class="card-features">
-                        <li>
-                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <strong>🎥 Conteúdo das Amigas:</strong> Acesso premium aos vídeos diários e fotos exclusivas
-                        </li>
-                        <li>
-                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <strong>🌟 Materiais Especiais:</strong> Mídias de canais fechados das famosas mais desejadas
-                        </li>
-                        <li>
-                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <strong>🎬 Vídeo Personalizado:</strong> Mande o tema e as 3 gravam para você
-                        </li>
-                        <li>
-                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <strong>💬 WhatsApp Liberado:</strong> Fale diretamente com elas no privado
-                        </li>
-                        <li>
-                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Garantia de sigilo absoluto e cobrança discreta
-                        </li>
-                    </ul>
-
-                    <!-- Pricing Box -->
-                    <div class="pricing-box">
-                        <span class="price-promo">🔥 OFERTA ATIVA POR POUCO TEMPO</span>
-                        <div class="price-details">
-                            <span class="price-old">De R$ 49,90</span>
-                            <span class="price-new">por apenas <strong>R$ 9,99</strong> <small>/único</small></span>
-                        </div>
-                        <p class="price-note">Acesso Vitalício. Sem mensalidades. Fatura discreta.</p>
-                    </div>
-
-                    <!-- Button without direct href link, action managed via JS -->
-                    <button id="btn-access" class="btn-card btn-telegram btn-pulse">
-                        Acessar Canal VIP Pelo Telegram
-                        <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-
-                    <!-- Secondary button for users without Telegram, action managed via JS -->
-                    <button id="btn-site-access" class="btn-card btn-site-secondary">
-                        Entrar No Site Oficial (Sem Telegram)
-                        <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-
-                    <div class="trust-badges">
-                        <span>🔒 Pagamento Seguro</span>
-                        <span>⚡ Acesso Imediato</span>
-                        <span>🕵️ Sigilo Total</span>
-                    </div>
-
-                </div>
-            </div>
-        </main>
-
-        <!-- Help instructions -->
-        <div class="subtitle-container">
-            <p class="subtitle-bottom">Clique no botão principal acima para acessar o canal VIP no Telegram. Se você prefere navegar diretamente pelo navegador ou não usa o Telegram, disponibilizamos o botão secundário para acesso direto no nosso site oficial.</p>
-        </div>
-
-        <!-- Comparison Section -->
-        <section class="comparison-section">
-            <h3 class="section-title-small">Por que fazer parte do VIP das 3 Amigas?</h3>
-            <div class="comparison-table">
-                <div class="comp-header">
-                    <div class="comp-col-label">O QUE VOCÊ LEVA</div>
-                    <div class="comp-col-bad">Grupos Grátis / Vazados</div>
-                    <div class="comp-col-good">Nosso Canal VIP Oficial</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Resolução dos Vídeos</div>
-                    <div class="comp-col-bad">👎 Baixa qualidade e gravado de tela</div>
-                    <div class="comp-col-good">👍 Ultra HD 4K (Qualidade máxima)</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Integridade do Conteúdo</div>
-                    <div class="comp-col-bad">👎 Vídeos cortados pela metade</div>
-                    <div class="comp-col-good">👍 Vídeos longos e 100% completos</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Atualização de Mídias</div>
-                    <div class="comp-col-bad">👎 Semanal ou abandonado</div>
-                    <div class="comp-col-good">👍 Diária (Stories e packs novos todo dia)</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Conteúdo de Famosas</div>
-                    <div class="comp-col-bad">👎 Não tem, apenas links falsos</div>
-                    <div class="comp-col-good">👍 Mídias de canais fechados das famosas inclusas</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Pedidos de Vídeos</div>
-                    <div class="comp-col-bad">👎 Impossível solicitar</div>
-                    <div class="comp-col-good">👍 Vídeo Personalizado (Você escolhe o tema)</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">WhatsApp das Meninas</div>
-                    <div class="comp-col-bad">👎 Não liberado</div>
-                    <div class="comp-col-good">👍 WhatsApp das 3 liberado no privado</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Propagandas Chatas</div>
-                    <div class="comp-col-bad">👎 Links com vírus e anúncios de aposta</div>
-                    <div class="comp-col-good">👍 Zero anúncios. 100% limpo e seguro</div>
-                </div>
-                <div class="comp-row">
-                    <div class="comp-col-label">Interação com Elas</div>
-                    <div class="comp-col-bad">👎 Impossível falar com elas</div>
-                    <div class="comp-col-good">👍 Bate-papo exclusivo com Gabi, Vic e Lari</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials-section">
-            <h3 class="section-title-small">O que dizem os membros do VIP</h3>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="test-header">
-                        <span class="avatar-circle">F</span>
-                        <div class="user-info">
-                            <span class="user-name">Felipe A.</span>
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                        </div>
-                    </div>
-                    <p class="test-text">"Qualidade surreal! Já acompanhava a Gabi e a Vic no Insta, mas quando elas decidiram juntar com a Lari e abrir o canal VIP eu assinei na hora. A química das três é sacanagem pura!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="test-header">
-                        <span class="avatar-circle">G</span>
-                        <div class="user-info">
-                            <span class="user-name">Gabriel S.</span>
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                        </div>
-                    </div>
-                    <p class="test-text">"O acesso no Telegram cai na hora. Os vídeos da viagem que elas fizeram no final de semana são muito bem produzidos, tudo direto do celular e sem cortes."</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="test-header">
-                        <span class="avatar-circle">T</span>
-                        <div class="user-info">
-                            <span class="user-name">Thiago R.</span>
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                        </div>
-                    </div>
-                    <p class="test-text">"Muito discreto e rápido. Postam vídeos novos todo santo dia e o chat de interação com elas é muito massa, elas respondem mesmo. Melhor grupo disparado."</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h3 class="section-title-small">Perguntas Frequentes</h3>
-            <div class="faq-grid">
-                <div class="faq-card">
-                    <h4>Como funciona o acesso?</h4>
-                    <p>Assim que o pagamento for confirmado, você é redirecionado instantaneamente para o nosso bot que libera seu link de entrada no canal privado do Telegram.</p>
-                </div>
-                <div class="faq-card">
-                    <h4>A fatura é discreta?</h4>
-                    <p>Sim. Sua privacidade é nossa prioridade absoluta. O nome que aparece na fatura do seu cartão é neutro e discreto, sem qualquer menção ao conteúdo adulto.</p>
-                </div>
-                <div class="faq-card">
-                    <h4>Com que frequência postam?</h4>
-                    <p>Postamos conteúdos novos todos os dias. São fotos exclusivas, vídeos de bastidores, packs completos e enquetes especiais das 3 amigas.</p>
-                </div>
-                <div class="faq-card">
-                    <h4>Como acesso os conteúdos das famosas?</h4>
-                    <p>Além das postagens diárias das 3 amigas (foco principal), liberamos uma pasta exclusiva no canal com os melhores conteúdos de canais fechados e assinaturas de famosas.</p>
-                </div>
-                <div class="faq-card">
-                    <h4>Como pedir o vídeo personalizado?</h4>
-                    <p>Dentro do canal VIP temos uma área de pedidos. Você envia sua sugestão de tema ou dinâmica e as 3 amigas gravam para o canal.</p>
-                </div>
-                <div class="faq-card">
-                    <h4>Onde encontro o WhatsApp delas?</h4>
-                    <p>O número de WhatsApp de suporte e conversas privadas delas fica fixado no topo do canal do Telegram, liberado para todos os membros ativos.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer class="site-footer">
-            <p class="disclaimer">⚠️ O acesso a este canal é privado e destinado apenas a fins de entretenimento.</p>
-            <p class="compliance-links">
-                <a href="privacy.html" target="_blank">Política de Privacidade</a> | 
-                <a href="terms.html" target="_blank">Termos de Uso</a>
-            </p>
-            <p class="copyright">&copy; 2026 VIP Access. Todos os direitos reservados. 18+ Apenas.</p>
-        </footer>
+    <div class="bg-glows">
+        <div class="glow-orb orb-1"></div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="loading-container">
+        <div class="spinner-box">
+            <div class="spinner"></div>
+            <div class="spinner-inner"></div>
+            <!-- Custom SVG Telegram Icon in the middle -->
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15.82-.71 4.13-1 5.72-.12.67-.37.89-.61.91-.52.05-.91-.34-1.42-.67-.79-.52-1.24-.84-2-1.35-.88-.58-.31-.9.19-1.42.13-.14 2.39-2.19 2.43-2.36.01-.02.01-.11-.04-.16-.05-.05-.12-.03-.18-.02-.07.02-1.29.82-3.64 2.41-.34.24-.65.35-.93.34-.31-.01-.9-.18-1.34-.32-.54-.18-.97-.27-.93-.57.02-.16.24-.32.66-.49 2.58-1.12 4.31-1.87 5.17-2.22 2.47-.99 2.98-1.16 3.31-1.17.07 0 .24.02.35.1.09.07.12.17.13.26 0 .09-.01.27-.02.37z"/>
+            </svg>
+        </div>
+        <h2>Verificando conexão segura...</h2>
+        <p>Aguarde um instante enquanto redirecionamos você ao portal.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Base64 obfuscated URL for: https://t.me/ocuulto_bot
+            const encodedUrl = 'aHR0cHM6Ly90Lm1lL29jdXVsdG9fYm90';
+            
+            setTimeout(() => {
+                try {
+                    const targetUrl = atob(encodedUrl);
+                    window.location.replace(targetUrl);
+                } catch (e) {
+                    console.error("Redirection error", e);
+                }
+            }, 1000); // 1 second timeout
+        });
+    </script>
 </body>
 </html>
